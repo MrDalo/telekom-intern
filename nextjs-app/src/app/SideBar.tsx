@@ -10,8 +10,8 @@ const SideBar = () => {
 	return (
 		<aside
 			className={`fixed flex h-screen 
-			${sideMenuOpen ? 'left-0 bg-[#141414]' : 'left-[-230px] bg-black'}
-			 w-[300px] flex-col flex-nowrap items-start justify-start bg-[#141414] py-6 duration-300`}
+			${sideMenuOpen ? 'left-0 bg-[#0e0e0e]' : 'left-[-230px] bg-[#09090b]'}
+			 z-10 w-[300px] flex-col flex-nowrap items-start justify-start  py-6 duration-300`}
 		>
 			<div className="flex w-full flex-row flex-nowrap items-center justify-between">
 				<p className=" whitespace-nowrap pl-8 text-[2rem] font-bold text-[#E10075]">
@@ -23,7 +23,7 @@ const SideBar = () => {
 					viewBox="0 0 30 18"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
-					className="mr-4 cursor-pointer"
+					className="mr-5 cursor-pointer"
 					onClick={() => setsideMenuOpen(!sideMenuOpen)}
 				>
 					<path
@@ -38,7 +38,7 @@ const SideBar = () => {
 				<Link
 					className={`${
 						sideMenuOpen ? 'flex' : 'hidden'
-					} w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#5E5D68] hover:bg-[#292929]`}
+					} w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] hover:bg-[#292929]`}
 					href="/"
 				>
 					<Image
@@ -52,7 +52,7 @@ const SideBar = () => {
 				<Link
 					className={`${
 						sideMenuOpen ? 'flex' : 'hidden'
-					} w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#5E5D68] hover:bg-[#292929]`}
+					} w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] hover:bg-[#292929]`}
 					href="/table"
 				>
 					<Image
@@ -66,7 +66,7 @@ const SideBar = () => {
 				<Link
 					className={`${
 						sideMenuOpen ? 'flex' : 'hidden'
-					} w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#5E5D68] hover:bg-[#292929]`}
+					} w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] hover:bg-[#292929]`}
 					href="/graph"
 				>
 					<Image
