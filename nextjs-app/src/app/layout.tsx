@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import SideBar from './SideBar';
+import SideBar from './side-bar';
 import { teleGrotesk } from './font';
+import SupportBox from '@/components/support-box';
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -15,8 +16,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" className=" scroll-smooth">
-			<body className={`${teleGrotesk.variable} font-teleGrotesk`}>
+			<body className={`${teleGrotesk.variable} font-teleGrotesk relative`}>
 				<SideBar />
+				<SupportBox />
 				{children}
 			</body>
 		</html>
