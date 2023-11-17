@@ -65,7 +65,7 @@ const TableRow = ({ entity, index }: Props) => {
 											: 'text-[#EEEEEE]'
 									}`}
 								>
-									{key === 'industry' ? (
+									{key === 'industry' || key === 'sector' ? (
 										<span className="flex flex-row flex-nowrap items-center justify-center gap-2">
 											{' '}
 											{
