@@ -11,11 +11,11 @@ const Table = () => {
 	return (
 		<>
 			<TableFilters
-				filteredData={filteredData}
+				filteredData={filteredData.sort((a, b) => a.id - b.id)}
 				setFilteredData={setFilteredData}
 			/>
 			<TableStructure
-				filteredData={filteredData}
+				filteredData={filteredData.sort((a, b) => a.id - b.id)}
 				setFilteredData={setFilteredData}
 			/>
 		</>

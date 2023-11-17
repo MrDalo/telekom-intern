@@ -1,8 +1,13 @@
 'use client';
 import { Entity } from '@/app/types/interfaces';
 import { ArrowUpDown } from 'lucide-react';
-import React, { useState } from 'react';
-import { set } from 'vue/types/umd';
+import React, { useRef, useState } from 'react';
+import {
+	HoverCard,
+	HoverCardContent,
+	HoverCardTrigger
+} from '../ui/hover-card';
+import TableRow from './table-row';
 
 type Props = {
 	filteredData: Entity[];
@@ -86,25 +91,7 @@ const TableStructure = ({ filteredData, setFilteredData }: Props) => {
 					<tbody>
 						{filteredData.length > 0 ? (
 							filteredData.map((entity, index) => {
-								return (
-									<tr
-										key={index}
-										className="border-b border-[#4d4d52]  transition-colors hover:bg-[#292929]"
-									>
-										{Object.keys(entity).map(key => {
-											if (key !== 'monthlyData') {
-												return (
-													<td
-														key={key}
-														className="p-4 text-center align-middle text-[#EEEEEE]"
-													>
-														{entity[key as TKey]}
-													</td>
-												);
-											}
-										})}
-									</tr>
-								);
+								return <TableRow key={index} entity={entity} index={index} />;
 							})
 						) : (
 							<tr>
