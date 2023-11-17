@@ -16,6 +16,7 @@ const SideBar = () => {
 	useEffect(() => {
 		if (window.innerWidth > 768) {
 			setsideMenuOpen(true);
+		}
 	}, []);
 	return (
 		<aside
