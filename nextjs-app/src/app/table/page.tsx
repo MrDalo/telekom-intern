@@ -1,10 +1,10 @@
-import FullTable from '@/components/(table)/full-table';
+import Table from '@/components/(table)/table';
 import React from 'react';
 
 const TablePage = () => {
 	return (
 		<main className=" flex h-screen flex-col items-center justify-start bg-[#09090b] py-16 pl-[320px] pr-16">
-			<FullTable />
+			<Table />
 		</main>
 	);
 };

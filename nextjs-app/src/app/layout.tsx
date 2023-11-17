@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import SideBar from './side-bar';
+import SideBar from '../components/side-bar';
 import { teleGrotesk } from './font';
 import SupportBox from '@/components/support-box';
 
@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" className=" scroll-smooth">
-			<body className={`${teleGrotesk.variable} font-teleGrotesk relative`}>
+			<body className={`${teleGrotesk.variable} relative font-teleGrotesk`}>
 				<SideBar />
 				<SupportBox />
 				{children}
