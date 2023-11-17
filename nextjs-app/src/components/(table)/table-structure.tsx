@@ -40,17 +40,17 @@ const TableStructure = ({ filteredData, setFilteredData }: Props) => {
 	});
 
 	return (
-		<div className=" h-5/6  max-w-[calc(100%-60px)] rounded-3xl bg-[#0e0e0e] p-8">
+		<div className=" max-h-5/6  max-w-[calc(100%)] overflow-auto rounded-3xl bg-[#0e0e0e] p-8 md:max-w-[calc(100%-60px)]">
 			<div className=" h-full w-full overflow-auto bg-[#0e0e0e] ">
 				<table className="w-full caption-bottom text-sm">
 					<thead className="sticky top-0">
-						<tr className=" border-b border-[#4d4d52] bg-[#0e0e0e] transition-colors  duration-200 hover:bg-[#0e0e0e]">
+						<tr className=" border-b border-[#4d4d52] bg-[#0e0e0e]  transition-colors duration-200 hover:bg-[#0e0e0e]">
 							{Object.keys(colDefinition).map(key => {
 								if (key !== 'monthlyData') {
 									return (
 										<th
 											key={key}
-											className="sticky top-0 h-12 px-4 text-left align-middle font-medium text-[#96969E] text-muted-foreground hover:text-[#EEEEEE] [&:has([role=checkbox])]:pr-0"
+											className="h-12 px-4 text-left align-middle font-medium text-[#96969E] text-muted-foreground hover:text-[#EEEEEE] [&:has([role=checkbox])]:pr-0"
 										>
 											<button
 												className=" flex flex-row flex-nowrap items-center justify-center rounded-md px-3 py-2 text-[#96969E] hover:bg-[#E10075] hover:text-white"

@@ -1,8 +1,13 @@
 'use client';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { useState } from 'react';
+
+const getWindowSize = () => {
+	const { innerWidth, innerHeight } = window;
+	return { innerWidth, innerHeight };
+};
 
 const SideBar = () => {
 	const [sideMenuOpen, setsideMenuOpen] = useState(true);
@@ -10,8 +15,12 @@ const SideBar = () => {
 	return (
 		<aside
 			className={`fixed flex h-screen 
-			${sideMenuOpen ? 'left-0 bg-[#0e0e0e]' : 'left-[-230px] bg-[#09090b]'}
-			 z-10 w-[300px] flex-col flex-nowrap items-start justify-start  py-6 duration-300`}
+			${
+				sideMenuOpen
+					? 'left-0 bg-[#0e0e0e]'
+					: 'left-[calc((70px-100vw))] bg-transparent md:left-[-230px]'
+			}
+			 z-30 w-full flex-col flex-nowrap items-start justify-start py-6  duration-300 md:w-[300px]`}
 		>
 			<div className="flex w-full flex-row flex-nowrap items-center justify-between">
 				<p className=" whitespace-nowrap pl-8 text-[2rem] font-bold text-[#E10075]">
@@ -38,7 +47,7 @@ const SideBar = () => {
 				<Link
 					className={`${
 						sideMenuOpen ? 'flex' : 'hidden'
-					} w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] duration-200 hover:bg-[#292929] `}
+					} w-full flex-row items-center justify-center gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] duration-200 hover:bg-[#292929] `}
 					// } w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] hover:bg-[#292929] `}
 					href="/"
 				>
@@ -53,7 +62,7 @@ const SideBar = () => {
 				<Link
 					className={`${
 						sideMenuOpen ? 'flex' : 'hidden'
-					} w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] duration-200 hover:bg-[#292929]`}
+					} w-full flex-row items-center justify-center gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] duration-200 hover:bg-[#292929]`}
 					href="/table"
 				>
 					<Image
@@ -67,7 +76,7 @@ const SideBar = () => {
 				<Link
 					className={`${
 						sideMenuOpen ? 'flex' : 'hidden'
-					} w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] duration-200 hover:bg-[#292929]`}
+					} w-full flex-row items-center justify-center gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] duration-200 hover:bg-[#292929]`}
 					href="/graph"
 				>
 					<Image

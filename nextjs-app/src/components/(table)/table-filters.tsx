@@ -33,14 +33,6 @@ const TableFilters = ({ filteredData, setFilteredData }: Props) => {
 			return data;
 		}
 
-		console.log(
-			filterString,
-			filterString.length,
-			status,
-			active,
-			filteringByFilterInput
-		);
-
 		const activeData: Entity[] =
 			// Case when filter input is set (deleting letter from the filter input) and checkbox is checked -> I have to load all data and filter it by status and then by filter input
 			filterString.length !== 0 &&
@@ -200,8 +192,6 @@ const TableFilters = ({ filteredData, setFilteredData }: Props) => {
 			checkboxDataHelper = checkboxDataHelper.concat(inactiveData);
 		}
 
-		console.log(checkboxDataHelper);
-
 		// I need new data immedialtely and the setCheckboxData will not update the data immediately, so I need to return also the data
 		setCheckboxData(checkboxDataHelper);
 		return checkboxDataHelper;
@@ -230,7 +220,6 @@ const TableFilters = ({ filteredData, setFilteredData }: Props) => {
 	) => {
 		let dataSource: Entity[] = [];
 
-		console.log(e.target.value, filterString);
 		// Case when sellers are deleted from the filter input
 		if (e.target.value.length < filterString.length) {
 			dataSource = createCheckBoxData(
@@ -271,7 +260,7 @@ const TableFilters = ({ filteredData, setFilteredData }: Props) => {
 	};
 
 	return (
-		<div className="mb-6 w-1/3">
+		<div className="mb-6 w-4/5 lg:w-1/3">
 			<form
 				className="flex w-full flex-col items-center gap-4"
 				onSubmit={e => {
@@ -281,7 +270,7 @@ const TableFilters = ({ filteredData, setFilteredData }: Props) => {
 				<input
 					type="text"
 					placeholder="Filter data"
-					className="w-full rounded-lg border border-[#434343] bg-[#09090b] px-3 py-2 text-white outline-none placeholder:text-[#96969E] focus:border-[#E10075]"
+					className="w-4/5 rounded-lg border border-[#434343] bg-[#09090b] px-3 py-2 text-white outline-none placeholder:text-[#96969E] focus:border-[#E10075] md:w-full"
 					onChange={e => filterInputOnChangeHandler(e)}
 				/>
 
