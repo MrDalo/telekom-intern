@@ -38,7 +38,8 @@ const SideBar = () => {
 				<Link
 					className={`${
 						sideMenuOpen ? 'flex' : 'hidden'
-					} w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] hover:bg-[#292929]`}
+					} w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] duration-200 hover:bg-[#292929] `}
+					// } w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] hover:bg-[#292929] `}
 					href="/"
 				>
 					<Image
@@ -52,7 +53,7 @@ const SideBar = () => {
 				<Link
 					className={`${
 						sideMenuOpen ? 'flex' : 'hidden'
-					} w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] hover:bg-[#292929]`}
+					} w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] duration-200 hover:bg-[#292929]`}
 					href="/table"
 				>
 					<Image
@@ -66,7 +67,7 @@ const SideBar = () => {
 				<Link
 					className={`${
 						sideMenuOpen ? 'flex' : 'hidden'
-					} w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] hover:bg-[#292929]`}
+					} w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] duration-200 hover:bg-[#292929]`}
 					href="/graph"
 				>
 					<Image

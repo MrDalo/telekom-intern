@@ -42,60 +42,68 @@ export function DataTable<TData, TValue>({
 	});
 
 	return (
-		<div className="relative h-[80vh] overflow-auto">
-			<Table>
-				<TableHeader className="sticky top-0">
-					{table.getHeaderGroups().map(headerGroup => (
-						<TableRow
-							key={headerGroup.id}
-							className={` border-[#4d4d52] bg-[#09090b] hover:bg-[#09090b]`}
-							// className={` border-[#4d4d52] hover:bg-[#292929]`}
-						>
-							{headerGroup.headers.map(header => {
-								return (
-									<TableHead
-										key={header.id}
-										className={` sticky top-0 text-[#96969E]`}
-									>
-										{header.isPlaceholder
-											? null
-											: flexRender(
-													header.column.columnDef.header,
-													header.getContext()
-											  )}
-									</TableHead>
-								);
-							})}
-						</TableRow>
-					))}
-				</TableHeader>
-				<TableBody>
-					{table.getRowModel().rows?.length ? (
-						table.getRowModel().rows.map(row => (
+		<div className=" h-5/6  max-w-[calc(100%-60px)] rounded-3xl bg-[#0e0e0e] p-8">
+			<div className=" h-full w-full overflow-auto bg-[#0e0e0e] ">
+				<Table>
+					<TableHeader className="sticky top-0">
+						{table.getHeaderGroups().map(headerGroup => (
 							<TableRow
-								key={row.id}
-								data-state={row.getIsSelected() && 'selected'}
-								className={` border-[#4d4d52] hover:bg-[#292929]`}
+								key={headerGroup.id}
+								className={` border-[#4d4d52] bg-[#0e0e0e] duration-200 hover:bg-[#0e0e0e]`}
+								// className={` border-[#4d4d52] hover:bg-[#292929]`}
 							>
-								{row.getVisibleCells().map(cell => (
-									<TableCell
-										key={cell.id}
-										className={` text-center text-[#EEEEEE]`}
-									>
-										{flexRender(cell.column.columnDef.cell, cell.getContext())}
-									</TableCell>
-								))}
+								{headerGroup.headers.map(header => {
+									return (
+										<TableHead
+											key={header.id}
+											className={` sticky top-0 text-[#96969E] hover:text-[#EEEEEE]`}
+										>
+											{header.isPlaceholder
+												? null
+												: flexRender(
+														header.column.columnDef.header,
+														header.getContext()
+												  )}
+										</TableHead>
+									);
+								})}
 							</TableRow>
-						))
-					) : (
-						<TableRow>
-							<TableCell colSpan={columns.length} className="h-24 text-center">
-								No results.
-							</TableCell>
-						</TableRow>
-					)}
-				</TableBody>
-			</Table>
+						))}
+					</TableHeader>
+					<TableBody>
+						{table.getRowModel().rows?.length ? (
+							table.getRowModel().rows.map(row => (
+								<TableRow
+									key={row.id}
+									data-state={row.getIsSelected() && 'selected'}
+									className={` border-[#4d4d52] hover:bg-[#292929]`}
+								>
+									{row.getVisibleCells().map(cell => (
+										<TableCell
+											key={cell.id}
+											className={` text-center text-[#EEEEEE]`}
+										>
+											{flexRender(
+												cell.column.columnDef.cell,
+												cell.getContext()
+											)}
+										</TableCell>
+									))}
+								</TableRow>
+							))
+						) : (
+							<TableRow>
+								<TableCell
+									colSpan={columns.length}
+									className="h-24 text-center"
+								>
+									No results.
+								</TableCell>
+							</TableRow>
+						)}
+					</TableBody>
+				</Table>
+			</div>
 		</div>
 	);
 }
