@@ -10,8 +10,13 @@ const getWindowSize = () => {
 };
 
 const SideBar = () => {
-	const [sideMenuOpen, setsideMenuOpen] = useState(true);
+	const [sideMenuOpen, setsideMenuOpen] = useState(false);
 
+	// const [windowDimensions, setWindowDimensions] = useState<WindowDimentions>({
+	useEffect(() => {
+		if (window.innerWidth > 768) {
+			setsideMenuOpen(true);
+	}, []);
 	return (
 		<aside
 			className={`fixed flex h-screen 

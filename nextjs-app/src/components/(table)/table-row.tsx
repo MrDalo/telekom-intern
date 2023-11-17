@@ -38,25 +38,25 @@ const TableRow = ({ entity, index }: Props) => {
 			<HoverCardContent className=" z-20 max-h-[50vh] w-auto overflow-auto rounded-lg border-[#57575c] bg-[#141414] text-[#e1e1e1]">
 				{entity.monthlyData.map((monthlyData, index) => {
 					return (
-						<div
+						<span
 							key={index}
 							className="flex flex-row flex-nowrap items-center justify-between gap-4  border-b border-[#96969E] px-4 py-2"
 						>
-							<div className="flex flex-row flex-nowrap items-center justify-between">
-								<div className="font-bold text-[#E10075]">
+							<span className="flex flex-row flex-nowrap items-center justify-between">
+								<span className="font-bold text-[#E10075]">
 									Date: {monthlyData.date}
-								</div>
-							</div>
-							<div className="text-[#96969E]">
+								</span>
+							</span>
+							<span className="text-[#96969E]">
 								Revenue: {monthlyData.Revenue};
-							</div>
-							<div className="text-[#96969E]">
+							</span>
+							<span className="text-[#96969E]">
 								Expenses: {monthlyData.Expenses};
-							</div>
-							<div className="text-[#96969E]">
+							</span>
+							<span className="text-[#96969E]">
 								Profit: {monthlyData.Profit};
-							</div>
-						</div>
+							</span>
+						</span>
 					);
 				})}
 			</HoverCardContent>
