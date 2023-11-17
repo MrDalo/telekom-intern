@@ -3,7 +3,7 @@ import React from 'react';
 
 const TablePage = () => {
 	return (
-		<main className=" flex h-screen flex-col items-center justify-start bg-[#09090b] py-16 pl-4 pr-4 md:pl-[320px] md:pr-16">
+		<main className=" flex h-screen w-full flex-col items-start justify-center overflow-hidden bg-[#09090b] px-4  py-16 md:px-8 lg:pr-12">
 			<Table />
 		</main>
 	);

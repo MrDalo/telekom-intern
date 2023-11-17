@@ -20,13 +20,14 @@ const SideBar = () => {
 	}, []);
 	return (
 		<aside
-			className={`fixed flex h-screen 
+			// className={` relative left-0 z-30 flex h-screen w-full max-w-[300px] flex-col flex-nowrap items-start justify-start bg-[#0e0e0e]  py-6 duration-300 md:min-w-[300px]`}
+			className={`fixed flex h-screen
 			${
 				sideMenuOpen
-					? 'left-0 bg-[#0e0e0e]'
-					: 'left-[calc((70px-100vw))] bg-transparent md:left-[-230px]'
+					? 'left-0 bg-[#0e0e0e] md:relative'
+					: 'left-[calc((70px-100vw))] bg-transparent md:absolute md:left-[-230px]'
 			}
-			 z-30 w-full flex-col flex-nowrap items-start justify-start py-6  duration-300 md:w-[300px]`}
+			 z-30 w-full flex-col flex-nowrap items-start justify-start py-6  duration-300 md:min-w-[300px] md:max-w-[300px]`}
 		>
 			<div className="flex w-full flex-row flex-nowrap items-center justify-between">
 				<p className=" whitespace-nowrap pl-8 text-[2rem] font-bold text-[#E10075]">
@@ -56,6 +57,9 @@ const SideBar = () => {
 					} w-full flex-row items-center justify-center gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] duration-200 hover:bg-[#292929] `}
 					// } w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] hover:bg-[#292929] `}
 					href="/"
+					onClick={() => {
+						window.innerWidth < 768 ? setsideMenuOpen(false) : '';
+					}}
 				>
 					<Image
 						src="/img/home-icon.svg"
@@ -70,6 +74,9 @@ const SideBar = () => {
 						sideMenuOpen ? 'flex' : 'hidden'
 					} w-full flex-row items-center justify-center gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] duration-200 hover:bg-[#292929]`}
 					href="/table"
+					onClick={() => {
+						window.innerWidth < 768 ? setsideMenuOpen(false) : '';
+					}}
 				>
 					<Image
 						src="/img/table-icon.svg"
@@ -84,6 +91,9 @@ const SideBar = () => {
 						sideMenuOpen ? 'flex' : 'hidden'
 					} w-full flex-row items-center justify-center gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] duration-200 hover:bg-[#292929]`}
 					href="/graph"
+					onClick={() => {
+						window.innerWidth < 768 ? setsideMenuOpen(false) : '';
+					}}
 				>
 					<Image
 						src="/img/graph-icon.svg"

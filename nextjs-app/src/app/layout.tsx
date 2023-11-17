@@ -16,7 +16,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" className=" scroll-smooth">
-			<body className={`${teleGrotesk.variable} relative font-teleGrotesk`}>
+			<body
+				className={`${teleGrotesk.variable} relative flex flex-row flex-nowrap bg-[#09090b] font-teleGrotesk`}
+			>
 				<SideBar />
 				<SupportBox />
 				{children}

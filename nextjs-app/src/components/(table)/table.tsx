@@ -9,7 +9,7 @@ const Table = () => {
 	const [filteredData, setFilteredData] = useState<Entity[]>(data);
 
 	return (
-		<>
+		<div className="flex h-full w-full flex-col items-center justify-start">
 			<TableFilters
 				filteredData={filteredData.sort((a, b) => a.id - b.id)}
 				setFilteredData={setFilteredData}
@@ -18,7 +18,7 @@ const Table = () => {
 				filteredData={filteredData.sort((a, b) => a.id - b.id)}
 				setFilteredData={setFilteredData}
 			/>
-		</>
+		</div>
 	);
 };
 
