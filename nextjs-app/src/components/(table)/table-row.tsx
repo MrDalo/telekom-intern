@@ -5,6 +5,18 @@ import {
 	HoverCardTrigger
 } from '../ui/hover-card';
 import { Entity } from '@/app/types/interfaces';
+import {
+	Apple,
+	BatteryCharging,
+	BookA,
+	Car,
+	CircleDollarSign,
+	Cpu,
+	Cross,
+	Dumbbell,
+	MonitorPlay,
+	Plane
+} from 'lucide-react';
 
 type Props = {
 	entity: Entity;
@@ -12,6 +24,21 @@ type Props = {
 };
 
 type TKey = keyof Omit<Entity, 'monthlyData'>;
+
+const industryDataDefinition = {
+	Automotive: <Car />,
+	Education: <BookA />,
+	Energy: <BatteryCharging />,
+	Finance: <CircleDollarSign />,
+	Fitness: <Dumbbell />,
+	Food: <Apple />,
+	Healthcare: <Cross />,
+	Media: <MonitorPlay />,
+	Technology: <Cpu />,
+	Travel: <Plane />
+};
+
+type TIndustry = keyof typeof industryDataDefinition;
 
 const TableRow = ({ entity, index }: Props) => {
 	return (
@@ -26,9 +53,29 @@ const TableRow = ({ entity, index }: Props) => {
 							return (
 								<td
 									key={key}
-									className="p-4 text-center align-middle text-[#EEEEEE]"
+									className={` p-4 text-center align-middle  ${
+										key === 'status'
+											? entity[key as TKey] === 'Active'
+												? 'text-green-400'
+												: entity[key as TKey] === 'Pending'
+												  ? ' text-yellow-400'
+												  : entity[key as TKey] === 'Inactive'
+												    ? 'text-red-400'
+												    : 'text-[#EEEEEE]'
+											: 'text-[#EEEEEE]'
+									}`}
 								>
-									{entity[key as TKey]}
+									{key === 'industry' ? (
+										<span className="flex flex-row flex-nowrap items-center justify-center gap-2">
+											{' '}
+											{
+												industryDataDefinition[entity[key as TKey] as TIndustry]
+											}{' '}
+											{entity[key as TKey]}
+										</span>
+									) : (
+										entity[key as TKey]
+									)}
 								</td>
 							);
 						}
