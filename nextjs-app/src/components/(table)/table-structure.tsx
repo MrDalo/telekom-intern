@@ -1,12 +1,7 @@
 'use client';
 import { Entity } from '@/app/types/interfaces';
 import { ArrowUpDown } from 'lucide-react';
-import React, { useRef, useState } from 'react';
-import {
-	HoverCard,
-	HoverCardContent,
-	HoverCardTrigger
-} from '../ui/hover-card';
+import React, { useState } from 'react';
 import TableRow from './table-row';
 
 type Props = {
@@ -40,7 +35,7 @@ const TableStructure = ({ filteredData, setFilteredData }: Props) => {
 	});
 
 	return (
-		<div className=" max-h-5/6  max-w-[calc(100%)] overflow-auto rounded-3xl bg-[#0e0e0e] p-8 md:max-w-[calc(100%-60px)]">
+		<div className=" max-h-5/6  nav-box-shadow max-w-[calc(100%)] overflow-auto rounded-3xl bg-[#0e0e0e] p-8 md:max-w-[calc(100%-60px)]">
 			<div className=" h-full w-full overflow-auto bg-[#0e0e0e] ">
 				<table className="w-full caption-bottom text-sm">
 					<thead className="sticky top-0">

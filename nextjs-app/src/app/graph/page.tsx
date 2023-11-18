@@ -1,8 +1,12 @@
+import Graph from '@/components/(graph)/graph-component';
 import React from 'react';
+import data from '../data/data';
 
 const GraphPage = () => {
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between bg-[#09090b] p-16"></main>
+		<main className="flex h-screen w-full flex-col items-start justify-center overflow-hidden bg-[#09090b] px-4  py-16 md:px-8 lg:pr-12">
+			<Graph data={data} />
+		</main>
 	);
 };
 

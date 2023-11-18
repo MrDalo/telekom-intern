@@ -1,11 +1,15 @@
 'use client';
-import data from '@/app/data/data';
+
 import { Entity } from '@/app/types/interfaces';
 import React, { useState } from 'react';
 import TableFilters from './table-filters';
 import TableStructure from './table-structure';
 
-const Table = () => {
+type Prop = {
+	data: Entity[];
+};
+
+const Table = ({ data }: Prop) => {
 	const [filteredData, setFilteredData] = useState<Entity[]>(data);
 
 	return (
