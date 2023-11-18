@@ -1,42 +1,38 @@
 'use client';
 import { Entity, MonthlyData } from '@/app/types/interfaces';
 import React, { useState } from 'react';
-import {
-	Area,
-	CartesianGrid,
-	ReferenceLine,
-	XAxis,
-	YAxis,
-	AreaChart,
-	ResponsiveContainer,
-	Tooltip,
-	Legend,
-	LineChart,
-	Line,
-	Bar,
-	BarChart
-} from 'recharts';
-import CustomTooltip from './custome-tooltip';
 import LineGraph from './line-graph';
-import BarGraph from './bar-graph';
 import Stats from './stats';
+import BarGraph from './bar-graph';
+import GraphFilter from './graph-filter';
 
 type Props = {
 	data: Entity[];
 };
 
 const Graph = ({ data }: Props) => {
-	const [filteredData, setFilteredData] = useState<Entity[]>(data);
+	const [isLineChart, setIsLineChart] = useState<boolean>(true);
+
+	const [filteredData, setFilteredData] = useState<MonthlyData[]>(
+		data.filter(entity => entity.id === 1)[0].monthlyData
+	);
 
 	return (
 		<div className="flex h-full w-full flex-col items-center justify-start gap-4">
-			<div></div>
+			<GraphFilter
+				data={data}
+				setFilteredData={setFilteredData}
+				setIsLineChart={setIsLineChart}
+			/>
 			{/* <div className=" h-5/6  w-[100%] overflow-auto rounded-3xl bg-[#0e0e0e] p-8 text-white "> */}
 			<div className=" nav-box-shadow  h-5/6 w-[100%] overflow-auto rounded-3xl bg-[#0e0e0e] p-8 text-white md:w-[calc(100%-60px)]">
-				<LineGraph data={data} />
-				{/* <BarGraph data={data} /> */}
+				{isLineChart ? (
+					<LineGraph entryData={filteredData} />
+				) : (
+					<BarGraph entryData={filteredData} />
+				)}
 			</div>
-			<Stats data={data} />
+			<Stats entryData={filteredData} />
 		</div>
 	);
 };

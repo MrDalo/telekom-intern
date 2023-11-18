@@ -13,10 +13,10 @@ import {
 import CustomTooltip from './custome-tooltip';
 
 type Props = {
-	data: Entity[];
+	entryData: MonthlyData[];
 };
 
-const BarGraph = ({ data }: Props) => {
+const BarGraph = ({ entryData }: Props) => {
 	return (
 		<ResponsiveContainer
 			width={'100%'}
@@ -24,7 +24,7 @@ const BarGraph = ({ data }: Props) => {
 			className="!min-w-[600px]"
 		>
 			<BarChart
-				data={data[0].monthlyData.sort((a: MonthlyData, b: MonthlyData) =>
+				data={entryData.sort((a: MonthlyData, b: MonthlyData) =>
 					a.date > b.date ? 1 : -1
 				)}
 				margin={{ top: 20, right: 30, left: 0, bottom: 0 }}
