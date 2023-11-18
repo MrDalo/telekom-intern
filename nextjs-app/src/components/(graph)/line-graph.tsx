@@ -1,4 +1,4 @@
-import { Entity, MonthlyData } from '@/app/types/interfaces';
+import { MonthlyData } from '@/app/types/interfaces';
 import React from 'react';
 import {
 	CartesianGrid,

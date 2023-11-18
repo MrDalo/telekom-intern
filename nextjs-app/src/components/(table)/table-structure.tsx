@@ -49,7 +49,6 @@ const TableStructure = ({ filteredData, setFilteredData }: Props) => {
 										>
 											<button
 												className=" flex flex-row flex-nowrap items-center justify-center rounded-md px-3 py-2 text-[#96969E] hover:bg-[#E10075] hover:text-white"
-												// className=" flex flex-row flex-nowrap items-center justify-center rounded-md px-3 py-2 hover:bg-[#292929]"
 												onClick={() => {
 													let isDesc =
 														sorting.field === key

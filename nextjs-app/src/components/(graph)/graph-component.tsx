@@ -24,7 +24,6 @@ const Graph = ({ data }: Props) => {
 				setFilteredData={setFilteredData}
 				setIsLineChart={setIsLineChart}
 			/>
-			{/* <div className=" h-5/6  w-[100%] overflow-auto rounded-3xl bg-[#0e0e0e] p-8 text-white "> */}
 			<div className=" nav-box-shadow  h-5/6 w-[100%] overflow-auto rounded-3xl bg-[#0e0e0e] p-8 text-white md:w-[calc(100%-60px)]">
 				{isLineChart ? (
 					<LineGraph entryData={filteredData} />

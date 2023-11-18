@@ -1,5 +1,4 @@
 import React from 'react';
-import data from '../../app/data/data';
 import { Entity, MonthlyData } from '@/app/types/interfaces';
 
 type Props = {

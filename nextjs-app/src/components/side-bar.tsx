@@ -1,18 +1,12 @@
 'use client';
 import Link from 'next/link';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { useState } from 'react';
-
-const getWindowSize = () => {
-	const { innerWidth, innerHeight } = window;
-	return { innerWidth, innerHeight };
-};
 
 const SideBar = () => {
 	const [sideMenuOpen, setsideMenuOpen] = useState(false);
 
-	// const [windowDimensions, setWindowDimensions] = useState<WindowDimentions>({
 	useEffect(() => {
 		if (window.innerWidth > 768) {
 			setsideMenuOpen(true);
@@ -20,7 +14,6 @@ const SideBar = () => {
 	}, []);
 	return (
 		<aside
-			// className={` relative left-0 z-30 flex h-screen w-full max-w-[300px] flex-col flex-nowrap items-start justify-start bg-[#0e0e0e]  py-6 duration-300 md:min-w-[300px]`}
 			className={`fixed flex h-screen
 			${
 				sideMenuOpen
@@ -55,7 +48,6 @@ const SideBar = () => {
 					className={`${
 						sideMenuOpen ? 'flex' : 'hidden'
 					} w-full flex-row items-center justify-center gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] duration-200 hover:bg-[#292929] `}
-					// } w-full flex-row items-center justify-start gap-4 whitespace-nowrap px-8 py-5 text-[1.4rem]  leading-none text-[#96969E] hover:bg-[#292929] `}
 					href="/"
 					onClick={() => {
 						window.innerWidth < 768 ? setsideMenuOpen(false) : '';

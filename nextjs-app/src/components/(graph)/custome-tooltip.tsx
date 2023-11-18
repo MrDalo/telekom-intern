@@ -1,4 +1,3 @@
-import { MonthlyData } from '@/app/types/interfaces';
 import React from 'react';
 import {
 	ValueType,
@@ -11,7 +10,6 @@ const CustomTooltip = ({
 	payload,
 	label
 }: TooltipProps<ValueType, NameType>) => {
-	// console.log(payload);
 	if (active && payload && payload.length) {
 		return (
 			<div className=" rounded-xl border border-[#96969E] bg-[#0e0e0e] p-4 opacity-100">
