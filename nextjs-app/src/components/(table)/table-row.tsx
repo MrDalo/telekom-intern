@@ -42,7 +42,7 @@ type TIndustry = keyof typeof industryDataDefinition;
 
 const TableRow = ({ entity, index }: Props) => {
 	return (
-		<HoverCard key={index} openDelay={300}>
+		<HoverCard key={index} openDelay={500}>
 			<HoverCardTrigger asChild>
 				<tr
 					key={index}

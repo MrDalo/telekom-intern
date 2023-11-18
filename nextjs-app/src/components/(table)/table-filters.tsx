@@ -18,6 +18,26 @@ const TableFilters = ({ filteredData, setFilteredData }: Props) => {
 
 	const [filterString, setFilterString] = useState<string>('');
 
+	const filterFunction = (item: Entity, comparision: string) => {
+		return (
+			item.company.toLowerCase().includes(comparision.toLowerCase()) ||
+			item.industry.toLowerCase().includes(comparision.toLowerCase()) ||
+			item.location.toLowerCase().includes(comparision.toLowerCase()) ||
+			item.region.toLowerCase().includes(comparision.toLowerCase()) ||
+			item.sector.toLowerCase().includes(comparision.toLowerCase()) ||
+			item.status.toLowerCase().includes(comparision.toLowerCase()) ||
+			item.employee_count
+				.toString()
+				.toLowerCase()
+				.includes(comparision.toLowerCase()) ||
+			item.id.toString().toLowerCase().includes(comparision.toLowerCase()) ||
+			item.year_founded
+				.toString()
+				.toLowerCase()
+				.includes(comparision.toLowerCase())
+		);
+	};
+
 	const createCheckBoxData = (
 		active: boolean,
 		pending: boolean,
@@ -41,39 +61,7 @@ const TableFilters = ({ filteredData, setFilteredData }: Props) => {
 			!filteringByFilterInput
 				? data
 						.filter(item => item.status === 'Active')
-						.filter(
-							item =>
-								item.company
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.industry
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.location
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.region
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.sector
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.status
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.employee_count
-									.toString()
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.id
-									.toString()
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.year_founded
-									.toString()
-									.toLowerCase()
-									.includes(filterString.toLowerCase())
-						)
+						.filter(item => filterFunction(item, filterString))
 				: // Case when filter input is empty and I want to find all occurence of the status
 				  filterString.length === 0 ||
 				    (status === 'Active' && active === true) ||
@@ -89,39 +77,7 @@ const TableFilters = ({ filteredData, setFilteredData }: Props) => {
 			!filteringByFilterInput
 				? data
 						.filter(item => item.status === 'Pending')
-						.filter(
-							item =>
-								item.company
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.industry
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.location
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.region
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.sector
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.status
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.employee_count
-									.toString()
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.id
-									.toString()
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.year_founded
-									.toString()
-									.toLowerCase()
-									.includes(filterString.toLowerCase())
-						)
+						.filter(item => filterFunction(item, filterString))
 				: // Case when filter input is empty and I want to find all occurence of the status
 				  filterString.length === 0 ||
 				    (status === 'Pending' && pending === true) ||
@@ -138,39 +94,7 @@ const TableFilters = ({ filteredData, setFilteredData }: Props) => {
 			!filteringByFilterInput
 				? data
 						.filter(item => item.status === 'Inactive')
-						.filter(
-							item =>
-								item.company
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.industry
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.location
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.region
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.sector
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.status
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.employee_count
-									.toString()
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.id
-									.toString()
-									.toLowerCase()
-									.includes(filterString.toLowerCase()) ||
-								item.year_founded
-									.toString()
-									.toLowerCase()
-									.includes(filterString.toLowerCase())
-						)
+						.filter(item => filterFunction(item, filterString))
 				: // Case when filter input is empty and I want to find all occurence of the status
 				  filterString.length === 0 ||
 				    (status === 'Inactive' && inactive === true) ||
@@ -235,27 +159,7 @@ const TableFilters = ({ filteredData, setFilteredData }: Props) => {
 
 		setFilterString(e.target.value);
 		setFilteredData(
-			dataSource.filter(
-				item =>
-					item.company.toLowerCase().includes(e.target.value.toLowerCase()) ||
-					item.industry.toLowerCase().includes(e.target.value.toLowerCase()) ||
-					item.location.toLowerCase().includes(e.target.value.toLowerCase()) ||
-					item.region.toLowerCase().includes(e.target.value.toLowerCase()) ||
-					item.sector.toLowerCase().includes(e.target.value.toLowerCase()) ||
-					item.status.toLowerCase().includes(e.target.value.toLowerCase()) ||
-					item.employee_count
-						.toString()
-						.toLowerCase()
-						.includes(e.target.value.toLowerCase()) ||
-					item.id
-						.toString()
-						.toLowerCase()
-						.includes(e.target.value.toLowerCase()) ||
-					item.year_founded
-						.toString()
-						.toLowerCase()
-						.includes(e.target.value.toLowerCase())
-			)
+			dataSource.filter(item => filterFunction(item, e.target.value))
 		);
 	};
 
