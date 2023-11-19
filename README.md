@@ -14,6 +14,12 @@ Move to the Next.js application (nextjs-app directory):
 cd nextjs-app
 ```
 
+Run npm install
+
+```bash
+npm install
+```
+
 Run the development server:
 
 ```bash
