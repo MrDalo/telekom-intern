@@ -40,6 +40,13 @@ const industryDataDefinition = {
 
 type TIndustry = keyof typeof industryDataDefinition;
 
+/**
+ * TableRow component is used to display the row of the table.
+ * This component requires the entity and index to be passed as a prop with data type of Entity and number.
+ * @param entity: Entity
+ * @param index: number
+ * @returns TableRow component
+ */
 const TableRow = ({ entity, index }: Props) => {
 	return (
 		<HoverCard key={index} openDelay={500}>

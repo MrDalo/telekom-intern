@@ -10,6 +10,13 @@ type Props = {
 	data: Entity[];
 };
 
+/**
+ * Graph component is the entry point and the main component.
+ * It contains the graph structure - GraphFilter, Stats, Line/Bar chart.
+ * This component requires the data to be passed as a prop with data type of Entity[].
+ * @param data: Entity[]
+ * @returns Graph component
+ */
 const Graph = ({ data }: Props) => {
 	const [isLineChart, setIsLineChart] = useState<boolean>(true);
 

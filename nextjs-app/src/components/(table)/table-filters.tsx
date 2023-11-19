@@ -9,6 +9,16 @@ type Props = {
 	setFilteredData: React.Dispatch<React.SetStateAction<Entity[]>>;
 };
 
+/**
+ * TableFilters component is used to filter the data.
+ * It contains the filter input and the checkboxes for filtering the data by status.
+ * The filter input is used to filter the data by any value in the row.
+ * The checkboxes are used to filter the data by status.
+ * This component requires the filteredData and setFilteredData to be passed as a prop with data type of Entity[].
+ * @param filteredData: Entity[]
+ * @param setFilteredData: React.Dispatch<React.SetStateAction<Entity[]>>
+ * @returns TableFilters component
+ */
 const TableFilters = ({ filteredData, setFilteredData }: Props) => {
 	const [checkboxData, setCheckboxData] = useState<Entity[]>(data);
 

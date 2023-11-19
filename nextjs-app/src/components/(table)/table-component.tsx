@@ -9,6 +9,15 @@ type Prop = {
 	data: Entity[];
 };
 
+/**
+ *  Table component is an entry point for the table.
+ * It contains the table filters and the table structure.
+ * The table filters are used to filter the data.
+ * The table structure is used to display and sort the data.
+ * This component requires the data to be passed as a prop with data type of Entity[].
+ * @param data: Entity[]
+ * @returns Table component
+ */
 const Table = ({ data }: Prop) => {
 	const [filteredData, setFilteredData] = useState<Entity[]>(data);
 

@@ -7,6 +7,14 @@ type Props = {
 	setIsLineChart: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
+/**
+ * GraphFilter component is used to display the filter for the graph.
+ * This component requires the data, setFilteredData and setIsLineChart to be passed as a prop with data type of Entity[], React.Dispatch<React.SetStateAction<MonthlyData[]>> and React.Dispatch<React.SetStateAction<boolean>>.
+ * @param data: Entity[]
+ * @param setFilteredData: React.Dispatch<React.SetStateAction<MonthlyData[]>>
+ * @param setIsLineChart: React.Dispatch<React.SetStateAction<boolean>>
+ * @returns GraphFilter component
+ */
 const GraphFilter = ({ data, setFilteredData, setIsLineChart }: Props) => {
 	return (
 		<div className=" flex flex-col flex-nowrap items-center justify-center gap-6 sm:flex-row">

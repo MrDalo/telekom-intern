@@ -5,6 +5,12 @@ type Props = {
 	entryData: MonthlyData[];
 };
 
+/**
+ * Stats component is used to display the stats of the graph.
+ * This component requires the entryData to be passed as a prop with data type of MonthlyData[].
+ * @param entryData: MonthlyData[]
+ * @returns Stats component
+ */
 const Stats = ({ entryData }: Props) => {
 	const expenses = entryData.reduce(
 		(accumulator, value) => accumulator + value.Expenses,

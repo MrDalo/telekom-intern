@@ -16,6 +16,12 @@ type Props = {
 	entryData: MonthlyData[];
 };
 
+/**
+ * LineGraph component is used to display the line graph.
+ * This component requires the entryData to be passed as a prop with data type of MonthlyData array.
+ * @param entryData: MonthlyData[]
+ * @returns LineGraph component
+ */
 const LineGraph = ({ entryData }: Props) => {
 	return (
 		<ResponsiveContainer

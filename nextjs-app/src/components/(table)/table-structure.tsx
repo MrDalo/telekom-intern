@@ -28,6 +28,14 @@ const colDefinition = {
 	sector: 'Sector'
 };
 
+/**
+ * TableStructure component is used to display and sort the data.
+ * It contains the table structure.
+ * This component requires the filteredData and setFilteredData to be passed as a prop with data type of Entity[].
+ * @param filteredData: Entity[]
+ * @param setFilteredData: React.Dispatch<React.SetStateAction<Entity[]>>
+ * @returns TableStructure component
+ */
 const TableStructure = ({ filteredData, setFilteredData }: Props) => {
 	const [sorting, setSorting] = useState<SortingState>({
 		field: 'id',

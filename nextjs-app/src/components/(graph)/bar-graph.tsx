@@ -16,6 +16,12 @@ type Props = {
 	entryData: MonthlyData[];
 };
 
+/**
+ * BarGraph component is used to display the bar graph.
+ * This component requires the entryData to be passed as a prop with data type of MonthlyData array.
+ * @param entryData: MonthlyData[]
+ * @returns BarGraph component
+ */
 const BarGraph = ({ entryData }: Props) => {
 	return (
 		<ResponsiveContainer

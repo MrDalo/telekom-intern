@@ -5,6 +5,14 @@ import {
 } from 'recharts/types/component/DefaultTooltipContent';
 import { TooltipProps } from 'recharts/types/component/Tooltip';
 
+/**
+ * CustomTooltip component is used to display the tooltip of the line/bar graph.
+ * This component requires the active, payload and label to be passed as a prop with data type of boolean, any and string.
+ * @param active: boolean
+ * @param payload: any
+ * @param label: string
+ * @returns CustomTooltip component
+ */
 const CustomTooltip = ({
 	active,
 	payload,
