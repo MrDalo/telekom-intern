@@ -1,5 +1,5 @@
 import React from 'react';
-
+// This is the same as the loading in graph. Could be abstracted into a separate component
 const loading = () => (
 	<div
 		role="status"

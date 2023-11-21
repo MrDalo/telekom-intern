@@ -15,6 +15,8 @@ type Props = {
  * @param setIsLineChart: React.Dispatch<React.SetStateAction<boolean>>
  * @returns GraphFilter component
  */
+
+// Rozdelit na 2 componenty. Select + checkboxy
 const GraphFilter = ({ data, setFilteredData, setIsLineChart }: Props) => {
 	return (
 		<div className=" flex flex-col flex-nowrap items-center justify-center gap-6 sm:flex-row">
@@ -22,6 +24,7 @@ const GraphFilter = ({ data, setFilteredData, setIsLineChart }: Props) => {
 				className=" nav-box-shadow rounded-xl bg-[#0e0e0e] p-4 text-white"
 				placeholder="Select Company"
 				defaultValue={data.sort((a, b) => (a.id > b.id ? 1 : -1))[0].company}
+				// Toto do funckie samozatne
 				onChange={e => {
 					const selectedEntity = data.filter(
 						entity => entity.company === e.target.value

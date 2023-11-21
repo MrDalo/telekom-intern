@@ -22,6 +22,7 @@ type Props = {
  * @param entryData: MonthlyData[]
  * @returns BarGraph component
  */
+// Toto a line graph by sa podla mna dali unifikovat do jedneho. 
 const BarGraph = ({ entryData }: Props) => {
 	return (
 		<ResponsiveContainer
@@ -30,6 +31,9 @@ const BarGraph = ({ entryData }: Props) => {
 			className="!min-w-[600px]"
 		>
 			<BarChart
+			    // Tento sort by bolo najlepsie urobit niekde vyssie, najlepsie tam kde su v state data a mat to cachnute
+				// Lebo takto sa to sortuje vzdy ked sa tento komponent zobrazi, cize ked klikas medzi line a bar graph,
+				// Tak sa to vzdy musi sortovat
 				data={entryData.sort((a: MonthlyData, b: MonthlyData) =>
 					a.date > b.date ? 1 : -1
 				)}
