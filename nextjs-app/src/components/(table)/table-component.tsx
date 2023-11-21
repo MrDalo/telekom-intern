@@ -7,6 +7,7 @@ import TableStructure from './table-structure';
 
 type Prop = {
 	data: Entity[];
+	className: string;
 };
 
 /**
@@ -18,11 +19,11 @@ type Prop = {
  * @param data: Entity[]
  * @returns Table component
  */
-const Table = ({ data }: Prop) => {
+const Table = ({ data, className }: Prop) => {
 	const [filteredData, setFilteredData] = useState<Entity[]>(data);
 
 	return (
-		<div className="flex h-full w-full flex-col items-center justify-start">
+		<div className={className}>
 			<TableFilters
 				filteredData={filteredData.sort((a, b) => a.id - b.id)}
 				setFilteredData={setFilteredData}

@@ -58,6 +58,7 @@ const TableRow = ({ entity, index }: Props) => {
 					{Object.keys(entity).map(key => {
 						if (key !== 'monthlyData') {
 							return (
+								// Tu by som urobil nejaku funkciu ze get color, ktora bude mat paramt key a podla toho vrati farbbu
 								<td
 									key={key}
 									className={` p-4 text-center align-middle  ${

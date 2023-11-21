@@ -20,6 +20,7 @@ type Props = {
  * @returns TableFilters component
  */
 const TableFilters = ({ filteredData, setFilteredData }: Props) => {
+	// Move this into a custom hook like useFilters
 	const [checkboxData, setCheckboxData] = useState<Entity[]>(data);
 
 	const [activeChecked, setActiveChecked] = useState<boolean>(true);
@@ -63,6 +64,7 @@ const TableFilters = ({ filteredData, setFilteredData }: Props) => {
 			return data;
 		}
 
+		// This looks like it count be unified. Most of the code is the same but only Active/Pending/Inactive etc is different
 		const activeData: Entity[] =
 			// Case when filter input is set (deleting letter from the filter input) and checkbox is checked -> I have to load all data and filter it by status and then by filter input
 			filterString.length !== 0 &&
@@ -131,6 +133,8 @@ const TableFilters = ({ filteredData, setFilteredData }: Props) => {
 		return checkboxDataHelper;
 	};
 
+	// Move till here
+
 	const checkboxHandler = (
 		checkState: boolean,
 		setCheckState: Dispatch<SetStateAction<boolean>>,
@@ -172,7 +176,7 @@ const TableFilters = ({ filteredData, setFilteredData }: Props) => {
 			dataSource.filter(item => filterFunction(item, e.target.value))
 		);
 	};
-
+	// I would separate this into 2 components. One for the input and one for the select box
 	return (
 		<div className="mb-6 w-4/5 lg:w-1/3">
 			<form
